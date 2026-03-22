@@ -39,3 +39,16 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# bun
+bun.lock
+bun.lockb
+
+# local development
+test.html
+.env.local
+.env.*.local
+
+# ide
+.vscode/
+.idea/
