@@ -37,9 +37,7 @@ export default function Installation() {
       badgeColor: "bg-success",
       note: (
         <>
-          Drop one script tag in your{" "}
-          <code className="bg-muted px-1 rounded text-xs">&lt;head&gt;</code> —
-          that&apos;s it.
+          Drop the script in your <code className="bg-muted px-1 rounded text-xs">&lt;head&gt;</code>.
         </>
       ),
       code: CDN_CODE,
@@ -66,9 +64,7 @@ export default function Installation() {
   return (
     <section id="installation" className="mb-20">
       <h2 className="text-3xl font-bold text-heading mb-2">Installation</h2>
-      <p className="text-body mb-8">
-        Add TSS to your project — pick the approach that fits your stack.
-      </p>
+      <p className="text-body mb-8">Install via package manager or use the CDN.</p>
 
       <div className="space-y-6">
         {steps.map((step) => (

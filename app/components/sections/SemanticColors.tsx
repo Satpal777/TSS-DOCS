@@ -21,11 +21,11 @@ const TOKENS = [
 ];
 
 const TEXT_TOKENS = [
-  { cls: "text-heading", label: "text-heading — Bold titles", extra: "text-2xl font-extrabold" },
-  { cls: "text-body", label: "text-body — Default paragraph text", extra: "" },
-  { cls: "text-subtle", label: "text-subtle — Secondary information and hints", extra: "" },
-  { cls: "text-disabled", label: "text-disabled — Inactive or unavailable content", extra: "" },
-  { cls: "text-link", label: "text-link — Hyperlinks and interactive text", extra: "" },
+  { cls: "text-heading", label: "text-heading: titles", extra: "text-2xl font-extrabold" },
+  { cls: "text-body", label: "text-body: paragraph", extra: "" },
+  { cls: "text-subtle", label: "text-subtle: secondary info", extra: "" },
+  { cls: "text-disabled", label: "text-disabled: inactive", extra: "" },
+  { cls: "text-link", label: "text-link: interactive", extra: "" },
 ];
 
 export default function SemanticColors() {

@@ -1,3 +1,4 @@
+import { Zap, Moon, Eye, Layers, Construction } from "lucide-react";
 import Image from "next/image";
 import { TSS_VERSION } from "../../lib/tssConfig";
 
@@ -21,12 +22,7 @@ export default function Introduction() {
       </div>
 
       <p className="text-lg text-body mb-8 leading-relaxed">
-        TSS is a{" "}
-        <strong className="text-heading">
-          lightweight, CDN-ready, utility-first CSS engine, zero configuration required.
-        </strong>{" "}
-        that scans your HTML at runtime, generates only the CSS you use, and
-        automatically adapts to light and dark.
+        Lightweight, zero-config, utility-first CSS engine. Scans HTML at runtime, generates only used CSS, and handles dark mode automatically.
       </p>
 
       <div className="grid grid-cols-4 gap-4 mb-8">
@@ -49,31 +45,33 @@ export default function Introduction() {
       <div className="grid grid-cols-2 gap-4">
         {[
           {
-            icon: "⚡",
-            title: "Runtime Generation",
-            desc: "Scans your HTML and generates only the CSS you actually use — no build step, no purge config.",
+            icon: <Zap size={24} className="text-accent" />,
+            title: "Runtime",
+            desc: "Zero-build CSS generation based on your actual HTML usage.",
           },
           {
-            icon: "🌗",
-            title: "Automatic Dark Mode",
-            desc: "Semantic tokens adapt automatically with prefers-color-scheme and manual toggle.",
+            icon: <Moon size={24} className="text-accent" />,
+            title: "Dark Mode",
+            desc: "Tokens adapt automatically to system settings or manual toggle.",
           },
           {
-            icon: "🔍",
-            title: "MutationObserver",
-            desc: "Watches for dynamically added elements and applies styles automatically — perfect for SPAs.",
+            icon: <Eye size={24} className="text-accent" />,
+            title: "Observer",
+            desc: "Watches for DOM changes to style dynamic elements instantly.",
           },
           {
-            icon: "🎨",
-            title: "Tailwind-like API",
-            desc: "Familiar utility class naming. If you know Tailwind, you already know TSS.",
+            icon: <Layers size={24} className="text-accent" />,
+            title: "Utilities",
+            desc: "Standard utility names. If you know Tailwind, you know TSS.",
           },
         ].map((card) => (
           <div
             key={card.title}
             className="bg-surface border rounded-xl p-5 flex gap-4 items-start"
           >
-            <span className="text-2xl">{card.icon}</span>
+            <div className="p-2 bg-accent/5 rounded-lg">
+              {card.icon}
+            </div>
             <div>
               <p className="font-bold text-heading mb-1">{card.title}</p>
               <p className="text-sm text-subtle">{card.desc}</p>
@@ -84,9 +82,9 @@ export default function Introduction() {
 
       <div className="mt-8 bg-surface border-2 border-accent border-dashed rounded-2xl p-6 flex flex-col items-center justify-between gap-6 shadow-sm overflow-hidden relative">
         <div className="absolute top-0 right-0 w-32 h-32 bg-accent opacity-5 -mr-16 -mt-16 rounded-full" />
-        <div className="flex items-center gap-5 relative z-10">
-          <div className="w-14 h-14 rounded-2xl bg-accent flex items-center justify-center text-2xl shadow-lg animate-pulse">
-            🚧
+        <div className="flex items-center gap-5 relative z-10 w-full">
+          <div className="w-14 h-14 rounded-2xl bg-accent flex items-center justify-center text-white shadow-lg shrink-0">
+            <Construction size={32} />
           </div>
           <div>
             <div className="flex items-center gap-2 mb-1">
@@ -100,8 +98,8 @@ export default function Introduction() {
             <h3 className="text-2xl font-black text-heading">
               Responsive Support
             </h3>
-            <p className="text-body leading-relaxed">
-              Native media query support for <code className="text-accent font-bold">sm:</code>, <code className="text-accent font-bold">md:</code>, and <code className="text-accent font-bold">lg:</code> viewports is arriving soon.
+            <p className="text-body leading-relaxed max-w-xl">
+              Breakpoints (<code className="text-accent font-bold">sm:</code>, <code className="text-accent font-bold">md:</code>, <code className="text-accent font-bold">lg:</code>) are arriving soon.
             </p>
           </div>
         </div>

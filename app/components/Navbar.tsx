@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Sun, Moon, Copy, Check, ExternalLink } from "lucide-react";
 import Image from "next/image";
 import { toggleDark } from "tea-simple-smart-css";
 import { TSS_VERSION } from "../lib/tssConfig";
@@ -29,37 +30,49 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-surface border-b shadow-sm">
       <div className="flex items-center justify-between px-6 h-16">
         {/* Logo */}
-        <div className="flex items-center gap-3">
-          <div className="relative w-10 h-10">
-            <Image
-              src="/logo.svg"
-              alt="TSS Logo"
-              fill
-              className="object-contain"
-              priority
-            />
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="font-black text-heading text-xl">TSS</span>
-            <span className="bg-accent text-white text-xs font-bold px-2 py-0.5 rounded-full">
-              v{TSS_VERSION}
-            </span>
+        <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
+            <div className="relative w-10 h-10 flex items-center justify-center bg-accent rounded-xl shadow-sm overflow-hidden">
+              <Image
+                src="/logo.svg"
+                alt="TSS Logo"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+            <div className="flex flex-col">
+              <div className="flex items-center gap-2">
+                <span className="font-black text-heading text-xl tracking-tight">TSS Docs</span>
+                <span className="bg-accent/10 text-accent text-[10px] font-bold px-1.5 py-0.5 rounded border border-accent/20">
+                  v{TSS_VERSION}
+                </span>
+              </div>
+              <div className="flex items-center gap-1.5 -mt-0.5">
+                <div className="w-1.5 h-1.5 rounded-full bg-success animate-pulse" />
+                <span className="text-[9px] font-black uppercase tracking-tighter text-subtle opacity-50">
+                  Powered by TSS
+                </span>
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Right side */}
         <div className="flex items-center gap-3">
           {/* Install command */}
-          <div className="bg-zinc-900 rounded-lg px-4 py-2 flex items-center gap-2">
-            <span className="text-green-400 text-xs">$</span>
-            <code className="text-green-300 text-xs">npm i tea-simple-smart-css</code>
+          <div className="bg-zinc-900 rounded-lg pl-3 pr-2 py-1.5 flex items-center gap-3 border border-white/5">
+            <div className="flex items-center gap-2">
+              <span className="text-zinc-500 font-mono text-xs">$</span>
+              <code className="text-zinc-200 text-xs font-medium">npm i tea-simple-smart-css</code>
+            </div>
             <button
               onClick={copyInstall}
-              className={`text-xs bg-zinc-700 px-2 py-0.5 rounded cursor-pointer border-0 ${
-                copied ? "text-success" : "text-subtle"
-              }`}
+              className={`p-1.5 rounded-md transition-all duration-200 border-0 cursor-pointer ${copied ? "bg-success/20 text-success" : "bg-zinc-800 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-700"
+                }`}
+              title="Copy install command"
             >
-              {copied ? "copied!" : "copy"}
+              {copied ? <Check size={14} /> : <Copy size={14} />}
             </button>
           </div>
 
@@ -68,18 +81,25 @@ export default function Navbar() {
             href="https://www.npmjs.com/package/tea-simple-smart-css"
             target="_blank"
             rel="noreferrer"
-            className="text-sm text-subtle font-medium px-3 py-1 rounded-lg bg-muted border"
+            className="flex items-center gap-2 text-xs text-subtle font-bold px-3 py-2 rounded-lg bg-muted border border-transparent hover:border-accent/20 hover:text-accent transition"
           >
-            npm ↗
+            <span>NPM</span>
+            <ExternalLink size={12} />
           </a>
+
+          <div className="w-px h-6 bg-divider mx-1" />
 
           {/* Theme toggle */}
           <button
             onClick={handleToggle}
             aria-label="Toggle dark mode"
-            className="w-9 h-9 rounded-full bg-muted border flex items-center justify-center cursor-pointer text-lg border-0"
+            className="w-10 h-10 rounded-xl bg-muted border flex items-center justify-center cursor-pointer transition hover:bg-surface hover:shadow-sm"
           >
-            {isDark ? "☀️" : "🌙"}
+            {isDark ? (
+              <Sun size={20} className="text-amber-400" />
+            ) : (
+              <Moon size={20} className="text-indigo-600" />
+            )}
           </button>
         </div>
       </div>

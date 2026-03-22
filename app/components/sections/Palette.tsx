@@ -14,7 +14,7 @@ export default function Palette() {
     <section id="palette" className="mb-20">
       <h2 className="text-3xl font-bold text-heading mb-2">Color Palette</h2>
       <p className="text-body mb-8">
-        Fixed color shades — identical in both light and dark mode. Syntax:{" "}
+        Fixed color shades, identical in both light and dark mode. Syntax:{" "}
         <code className="bg-muted px-1 py-0.5 rounded text-sm">
           bg-&#123;color&#125;-&#123;shade&#125;
         </code>{" "}

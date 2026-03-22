@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { ExternalLink } from "lucide-react";
 import CodeBlock from "../CodeBlock";
 import { TSS_CDN_JSDELIVR } from "../../lib/tssConfig";
 
@@ -25,7 +26,7 @@ const SNIPPET = `<span class="text-zinc-500">&lt;!DOCTYPE html&gt;</span>
 <span class="text-blue-400">&lt;/body&gt;</span>
 <span class="text-blue-400">&lt;/html&gt;</span>`;
 
-const DEFAULT_URL = "https://codepen.io/Satpal777/embed/dyBgYpX";
+const DEFAULT_URL = "";
 
 export default function QuickStart() {
   const [isDark, setIsDark] = useState(false);
@@ -48,15 +49,11 @@ export default function QuickStart() {
   }, []);
 
   const rawUrl = process.env.NEXT_PUBLIC_CODEPEN_URL || DEFAULT_URL;
-  const baseUrl = rawUrl.split('?')[0];
-  const codepenUrl = `${baseUrl}?default-tab=result&theme-id=${isDark ? 'dark' : 'light'}`;
 
   return (
     <section id="quick-start" className="mb-20">
       <h2 className="text-3xl font-bold text-heading mb-2">Quick Start</h2>
-      <p className="text-body mb-8">
-        A minimal working page. No build tools. No configuration.
-      </p>
+      <p className="text-body mb-8">Minimal production-ready template.</p>
 
       <div className="mb-6">
         <CodeBlock lang="index.html" code={
@@ -86,7 +83,7 @@ export default function QuickStart() {
       </div>
 
       {/* Live preview */}
-      <div className="border-2 border-accent rounded-xl overflow-hidden">
+      <div className="border-2 border-accent rounded-xl overflow-hidden min-h-[400px]">
         <div className="bg-accent px-4 py-2 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
@@ -95,22 +92,17 @@ export default function QuickStart() {
             <span className="text-white text-xs ml-2">Live Preview (CodePen)</span>
           </div>
           <a
-            href={baseUrl}
+            href={rawUrl}
             target="_blank"
             rel="noreferrer"
-            className="text-[10px] text-white/80 hover:text-white underline"
+            className="text-[10px] text-white/80 hover:text-white flex items-center gap-1"
           >
-            Open in CodePen ↗
+            <span>Open in CodePen</span> <ExternalLink size={10} />
           </a>
         </div>
-        <div className="bg-base h-full">
-          <iframe
-            src={codepenUrl}
-            title="TSS Quick Start Preview"
-            loading="lazy"
-            allowFullScreen={true}
-            className="w-full h-96 border-0"
-          />
+        <div className="bg-base h-96">
+          <iframe height="300" style={{ width: "100%" }} scrolling="no" title="Untitled" src={rawUrl} loading="lazy">
+          </iframe>
         </div>
       </div>
     </section>

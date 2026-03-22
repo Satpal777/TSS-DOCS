@@ -118,7 +118,7 @@ export default function Typography() {
           <p className="text-xs text-subtle mb-3 font-semibold uppercase">Misc</p>
           <p className="italic text-body text-sm py-1 border-b">italic</p>
           <p className="truncate text-body text-sm py-1">
-            truncate — This is a very long piece of text that gets truncated with ellipsis
+            truncate: long text trimmed with ellipsis.
           </p>
         </div>
       </div>

@@ -25,8 +25,8 @@ const NAV = [
     links: [
       { href: "#typography", label: "Typography" },
       { href: "#spacing", label: "Spacing" },
-      { href: "#borders", label: "Borders & Radius" },
-      { href: "#layout", label: "Layout & Flexbox" },
+      { href: "#borders", label: "Borders" },
+      { href: "#layout", label: "Layout" },
       { href: "#grid", label: "Grid" },
       { href: "#sizing", label: "Sizing" },
       { href: "#positioning", label: "Positioning" },
@@ -88,10 +88,15 @@ export default function Sidebar() {
         ))}
 
         <div className="border-t my-4 mx-3" />
-        <div className="mx-3 p-3 bg-muted rounded-xl">
-          <p className="text-xs text-subtle mb-1 font-semibold">Package</p>
-          <p className="text-xs text-body">tea-simple-smart-css</p>
-          <p className="text-xs text-subtle mt-1">MIT License · {new Date().getFullYear()}</p>
+        <div className="mx-3 p-4 bg-muted border border-accent/10 rounded-xl transition hover:border-accent/30 group">
+          <div className="flex items-center gap-2 mb-2">
+            <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+            <p className="text-[10px] font-black uppercase tracking-widest text-subtle group-hover:text-accent transition">
+              Powered by TSS
+            </p>
+          </div>
+          <p className="text-[11px] text-body font-medium truncate">tea-simple-smart-css</p>
+          <p className="text-[10px] text-subtle mt-1 opacity-60">MIT License · {new Date().getFullYear()}</p>
         </div>
       </div>
     </aside>

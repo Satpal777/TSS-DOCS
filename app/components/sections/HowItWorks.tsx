@@ -2,16 +2,10 @@ export default function HowItWorks() {
   const steps = [
     {
       num: "1",
-      title: "DOM Scan on Load",
+      title: "DOM Scan",
       body: (
         <>
-          On{" "}
-          <code className="bg-muted px-1 rounded text-xs">
-            DOMContentLoaded
-          </code>
-          , TSS walks every element, reads its{" "}
-          <code className="bg-muted px-1 rounded text-xs">classList</code>, and
-          passes each class through its parser.
+          TSS scans every element and generates required CSS at runtime.
         </>
       ),
       snippet: (
@@ -22,18 +16,10 @@ export default function HowItWorks() {
     },
     {
       num: "2",
-      title: "CSS Variable Theming",
+      title: "Theming",
       body: (
         <>
-          TSS injects a{" "}
-          <code className="bg-muted px-1 rounded text-xs">&lt;style&gt;</code>{" "}
-          tag with all semantic tokens as{" "}
-          <code className="bg-muted px-1 rounded text-xs">:root</code> CSS
-          variables, plus a{" "}
-          <code className="bg-muted px-1 rounded text-xs">
-            @media (prefers-color-scheme: dark)
-          </code>{" "}
-          override.
+          TSS injects semantic tokens as CSS variables with dark mode support.
         </>
       ),
       snippet: (
@@ -56,15 +42,10 @@ export default function HowItWorks() {
     },
     {
       num: "3",
-      title: "MutationObserver Watches Changes",
+      title: "Watch Changes",
       body: (
         <>
-          A{" "}
-          <code className="bg-muted px-1 rounded text-xs">
-            MutationObserver
-          </code>{" "}
-          watches for new nodes and class attribute changes, so dynamically
-          added elements are styled automatically.
+          TSS watches for new elements to apply styles automatically.
         </>
       ),
       snippet: (

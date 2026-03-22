@@ -1,4 +1,6 @@
-// ─── Spacing ────────────────────────────────────────────────────────────────
+"use client";
+
+// Spacing
 export function Spacing() {
   const SCALE = [
     { key: "0", val: "0", px: "0px" },
@@ -16,21 +18,14 @@ export function Spacing() {
     { key: "16", val: "4rem", px: "64px" },
     { key: "20", val: "5rem", px: "80px" },
     { key: "24", val: "6rem", px: "96px" },
-    { key: "auto", val: "auto", px: "—" },
+    { key: "auto", val: "auto", px: "-" },
   ];
 
   return (
     <section id="spacing" className="mb-20">
       <h2 className="text-3xl font-bold text-heading mb-2">Spacing</h2>
       <p className="text-body mb-4">
-        Consistent spacing scale for padding and margin. Syntax:{" "}
-        <code className="bg-muted px-1 py-0.5 rounded text-sm">p-&#123;n&#125;</code>,{" "}
-        <code className="bg-muted px-1 py-0.5 rounded text-sm">m-&#123;n&#125;</code> with axis
-        variants:{" "}
-        <code className="bg-muted px-1 py-0.5 rounded text-sm">
-          px py pt pr pb pl mx my mt mr mb ml
-        </code>
-        .
+        Consistent scale for padding and margin. Axis variants supported.
       </p>
       <div className="bg-surface border rounded-2xl overflow-hidden shadow-sm mb-6">
         <table>
@@ -72,12 +67,12 @@ export function Spacing() {
   );
 }
 
-// ─── Borders ────────────────────────────────────────────────────────────────
+// Borders
 export function Borders() {
   return (
     <section id="borders" className="mb-20">
       <h2 className="text-3xl font-bold text-heading mb-2">Borders &amp; Radius</h2>
-      <p className="text-body mb-8">Border widths, colors, styles, and border-radius utilities.</p>
+      <p className="text-body mb-8">Border widths, colors, and radius utilities.</p>
 
       <h3 className="text-lg font-bold text-heading mb-3">Border Width</h3>
       <div className="grid grid-cols-4 gap-3 mb-6">
@@ -146,7 +141,7 @@ export function Borders() {
   );
 }
 
-// ─── Layout ─────────────────────────────────────────────────────────────────
+// Layout
 export function Layout() {
   const FLEX_REF = [
     ["flex-row / flex-col", "flex-direction: row / column"],
@@ -163,7 +158,7 @@ export function Layout() {
   return (
     <section id="layout" className="mb-20">
       <h2 className="text-3xl font-bold text-heading mb-2">Layout &amp; Flexbox</h2>
-      <p className="text-body mb-8">Display types and flexbox utilities for building any layout.</p>
+      <p className="text-body mb-8">Display and flexbox utilities.</p>
 
       <h3 className="text-lg font-bold text-heading mb-3">Flex Examples</h3>
       <div className="space-y-3 mb-6">
@@ -210,7 +205,7 @@ export function Layout() {
   );
 }
 
-// ─── Grid ────────────────────────────────────────────────────────────────────
+// Grid
 export function Grid() {
   const GRID_REF = [
     ["grid-cols-{1-12}", "grid-template-columns: repeat(n, minmax(0, 1fr))"],
@@ -261,7 +256,7 @@ export function Grid() {
   );
 }
 
-// ─── Sizing ──────────────────────────────────────────────────────────────────
+// Sizing
 export function Sizing() {
   const PREFIXES = [
     ["w-{n}", "width", "w-4, w-8, w-16, w-full, w-auto"],
@@ -310,7 +305,7 @@ export function Sizing() {
   );
 }
 
-// ─── Positioning ─────────────────────────────────────────────────────────────
+// Positioning
 export function Positioning() {
   const ROWS = [
     ["static / relative / absolute / fixed / sticky", "position: …"],
@@ -338,7 +333,7 @@ export function Positioning() {
   );
 }
 
-// ─── Shadows ─────────────────────────────────────────────────────────────────
+// Shadows
 export function Shadows() {
   const SHADOWS = ["sm", "", "md", "lg", "xl", "2xl"];
   return (
@@ -356,7 +351,7 @@ export function Shadows() {
   );
 }
 
-// ─── Transitions ─────────────────────────────────────────────────────────────
+// Transitions
 export function Transitions() {
   const TRANS = [
     ["transition", "color, bg, border, opacity, shadow, transform — 150ms ease"],
@@ -494,6 +489,8 @@ export function Effects() {
   );
 }
 
+import { useState } from "react";
+import { ExternalLink } from "lucide-react";
 import CodeBlock from "../CodeBlock";
 
 const API_METHODS = [
@@ -501,7 +498,7 @@ const API_METHODS = [
     badge: "METHOD", badgeCls: "bg-accent",
     sig: "TSS.toggleDark()",
     desc: "Toggles dark mode on the <html> element by adding/removing the dark class. Persists preference to localStorage.",
-    returns: "boolean — true if dark mode is now active, false if light.",
+    returns: "boolean - true if dark mode is now active, false if light.",
     code: `<span class="text-zinc-500">// Toggle dark mode</span>
 <span class="text-blue-400">const</span> <span class="text-zinc-200">isDark</span> <span class="text-zinc-400">=</span> <span class="text-zinc-200">TSS</span><span class="text-zinc-400">.</span><span class="text-amber-300">toggleDark</span><span class="text-zinc-400">();</span>
 <span class="text-zinc-200">console</span><span class="text-zinc-400">.</span><span class="text-amber-300">log</span><span class="text-zinc-400">(</span><span class="text-zinc-200">isDark</span><span class="text-zinc-400">);</span> <span class="text-zinc-500">// true or false</span>`,

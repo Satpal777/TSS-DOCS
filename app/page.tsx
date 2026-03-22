@@ -23,6 +23,7 @@ import {
   ApiReference,
 } from "./components/sections/Sections";
 import { TSS_VERSION, TSS_CDN_JSDELIVR, TSS_CDN_UNPKG } from "./lib/tssConfig";
+import { ExternalLink } from "lucide-react";
 
 export default function DocsPage() {
   return (
@@ -82,22 +83,31 @@ export default function DocsPage() {
                 href="https://www.npmjs.com/package/tea-simple-smart-css"
                 className="text-sm text-link"
               >
-                npm ↗
+                npm <ExternalLink size={12} className="inline ml-1" />
               </a>
               <span className="text-subtle">·</span>
               <a
                 href={TSS_CDN_JSDELIVR}
                 className="text-sm text-link"
               >
-                jsDelivr ↗
+                jsDelivr <ExternalLink size={12} className="inline ml-1" />
               </a>
               <span className="text-subtle">·</span>
               <a
                 href={TSS_CDN_UNPKG}
                 className="text-sm text-link"
               >
-                unpkg ↗
+                unpkg <ExternalLink size={12} className="inline ml-1" />
               </a>
+            </div>
+            
+            <div className="mt-10 flex justify-center">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-muted border border-accent/20 shadow-sm transition hover:shadow-md hover:scale-105 active:scale-95 group">
+                <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                <span className="text-[10px] font-black uppercase tracking-widest text-subtle group-hover:text-accent transition">
+                  Built with TSS
+                </span>
+              </div>
             </div>
           </footer>
         </div>
