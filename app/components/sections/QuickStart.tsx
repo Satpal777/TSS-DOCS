@@ -2,12 +2,13 @@
 
 import { useEffect, useState } from "react";
 import CodeBlock from "../CodeBlock";
+import { TSS_CDN_JSDELIVR } from "../../lib/tssConfig";
 
 const SNIPPET = `<span class="text-zinc-500">&lt;!DOCTYPE html&gt;</span>
 <span class="text-blue-400">&lt;html</span> <span class="text-green-300">lang</span><span class="text-zinc-400">=</span><span class="text-amber-300">"en"</span><span class="text-blue-400">&gt;</span>
 <span class="text-blue-400">&lt;head&gt;</span>
   <span class="text-blue-400">&lt;meta</span> <span class="text-green-300">charset</span><span class="text-zinc-400">=</span><span class="text-amber-300">"UTF-8"</span><span class="text-blue-400">&gt;</span>
-  <span class="text-blue-400">&lt;script</span> <span class="text-green-300">src</span><span class="text-zinc-400">=</span><span class="text-amber-300">"https://cdn.jsdelivr.net/npm/tea-simple-smart-css@1.0.3/dist/tss.min.js"</span><span class="text-blue-400">&gt;&lt;/script&gt;</span>
+  <span class="text-blue-400">&lt;script</span> <span class="text-green-300">src</span><span class="text-zinc-400">=</span><span class="text-amber-300">"${TSS_CDN_JSDELIVR}"</span><span class="text-blue-400">&gt;&lt;/script&gt;</span>
 <span class="text-blue-400">&lt;/head&gt;</span>
 <span class="text-blue-400">&lt;body</span> <span class="text-green-300">class</span><span class="text-zinc-400">=</span><span class="text-amber-300">"bg-base text-body"</span><span class="text-blue-400">&gt;</span>
   <span class="text-blue-400">&lt;div</span> <span class="text-green-300">class</span><span class="text-zinc-400">=</span><span class="text-amber-300">"max-w-xl mx-auto p-8"</span><span class="text-blue-400">&gt;</span>
@@ -64,7 +65,7 @@ export default function QuickStart() {
           <html lang="en">
           <head>
             <meta charset="UTF-8">
-            <script src="https://cdn.jsdelivr.net/npm/tea-simple-smart-css@1.0.3/dist/tss.min.js"></script>
+            <script src="${TSS_CDN_JSDELIVR}"></script>
           </head>
           <body class="bg-base text-body">
             <div class="max-w-xl mx-auto p-8">

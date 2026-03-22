@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { toggleDark } from "tea-simple-smart-css";
+import { TSS_VERSION } from "../lib/tssConfig";
 
 export default function Navbar() {
   const [copied, setCopied] = useState(false);
@@ -41,7 +42,7 @@ export default function Navbar() {
           <div className="flex items-center gap-2">
             <span className="font-black text-heading text-xl">TSS</span>
             <span className="bg-accent text-white text-xs font-bold px-2 py-0.5 rounded-full">
-              v1.0.3
+              v{TSS_VERSION}
             </span>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { TSS_VERSION } from "../../lib/tssConfig";
 
 export default function Introduction() {
   return (
@@ -15,7 +16,7 @@ export default function Introduction() {
         </div>
         <div>
           <h1 className="text-4xl font-black text-heading">Tea Simple Smart CSS</h1>
-          <p className="text-subtle">TSS · v1.0.3 · MIT</p>
+          <p className="text-subtle">TSS · v{TSS_VERSION} · MIT</p>
         </div>
       </div>
 

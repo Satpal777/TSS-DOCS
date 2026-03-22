@@ -1,12 +1,13 @@
 import CodeBlock from "../CodeBlock";
+import { TSS_VERSION, TSS_CDN_JSDELIVR, TSS_CDN_UNPKG, TSS_NPM_INSTALL } from "../../lib/tssConfig";
 
 const CDN_CODE = `<span class="text-zinc-500">&lt;!-- jsDelivr (recommended) --&gt;</span>
-<span class="text-blue-400">&lt;script</span> <span class="text-green-300">src</span><span class="text-zinc-400">=</span><span class="text-amber-300">"https://cdn.jsdelivr.net/npm/tea-simple-smart-css@1.0.3/dist/tss.min.js"</span><span class="text-blue-400">&gt;&lt;/script&gt;</span>
+<span class="text-blue-400">&lt;script</span> <span class="text-green-300">src</span><span class="text-zinc-400">=</span><span class="text-amber-300">"${TSS_CDN_JSDELIVR}"</span><span class="text-blue-400">&gt;&lt;/script&gt;</span>
 
 <span class="text-zinc-500">&lt;!-- or unpkg --&gt;</span>
-<span class="text-blue-400">&lt;script</span> <span class="text-green-300">src</span><span class="text-zinc-400">=</span><span class="text-amber-300">"https://unpkg.com/tea-simple-smart-css@1.0.3/dist/tss.min.js"</span><span class="text-blue-400">&gt;&lt;/script&gt;</span>`;
+<span class="text-blue-400">&lt;script</span> <span class="text-green-300">src</span><span class="text-zinc-400">=</span><span class="text-amber-300">"${TSS_CDN_UNPKG}"</span><span class="text-blue-400">&gt;&lt;/script&gt;</span>`;
 
-const NPM_CODE = `<span class="text-green-300">npm install tea-simple-smart-css</span>`;
+const NPM_CODE = `<span class="text-green-300">${TSS_NPM_INSTALL}</span>`;
 
 const ESM_CODE = `<span class="text-purple-400">import</span> <span class="text-zinc-200">TSS</span> <span class="text-purple-400">from</span> <span class="text-amber-300">'tea-simple-smart-css'</span><span class="text-zinc-400">;</span>`;
 
@@ -18,7 +19,7 @@ const NEXT_CODE = `<span class="text-zinc-500">// app/layout.tsx</span>
     <span class="text-blue-400">&lt;html</span><span class="text-blue-400">&gt;</span>
       <span class="text-blue-400">&lt;head&gt;</span>
         <span class="text-blue-400">&lt;Script</span>
-          <span class="text-green-300">src</span><span class="text-zinc-400">=</span><span class="text-amber-300">"https://cdn.jsdelivr.net/npm/tea-simple-smart-css@1.0.3/dist/tss.min.js"</span>
+          <span class="text-green-300">src</span><span class="text-zinc-400">=</span><span class="text-amber-300">"${TSS_CDN_JSDELIVR}"</span>
           <span class="text-green-300">strategy</span><span class="text-zinc-400">=</span><span class="text-amber-300">"beforeInteractive"</span>
         <span class="text-blue-400">/&gt;</span>
       <span class="text-blue-400">&lt;/head&gt;</span>

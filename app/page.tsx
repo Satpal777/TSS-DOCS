@@ -22,6 +22,7 @@ import {
   Utilities,
   ApiReference,
 } from "./components/sections/Sections";
+import { TSS_VERSION, TSS_CDN_JSDELIVR, TSS_CDN_UNPKG } from "./lib/tssConfig";
 
 export default function DocsPage() {
   return (
@@ -74,7 +75,7 @@ export default function DocsPage() {
               tea-simple-smart-css
             </p>
             <p className="text-subtle text-sm mb-6">
-              v1.0.3 · MIT License · Zero dependencies
+              v{TSS_VERSION} · MIT License · Zero dependencies
             </p>
             <div className="flex justify-center gap-4 flex-wrap">
               <a
@@ -85,14 +86,14 @@ export default function DocsPage() {
               </a>
               <span className="text-subtle">·</span>
               <a
-                href="https://cdn.jsdelivr.net/npm/tea-simple-smart-css@1.0.3/dist/tss.min.js"
+                href={TSS_CDN_JSDELIVR}
                 className="text-sm text-link"
               >
                 jsDelivr ↗
               </a>
               <span className="text-subtle">·</span>
               <a
-                href="https://unpkg.com/tea-simple-smart-css@1.0.3/dist/tss.min.js"
+                href={TSS_CDN_UNPKG}
                 className="text-sm text-link"
               >
                 unpkg ↗
